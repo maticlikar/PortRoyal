@@ -6,10 +6,15 @@ settler = new Settler();
 joker = new Joker();
 priest = new Priest();
 
-console.log(card);
-console.log(captain);
-console.log(trader.color);
-console.log(joker);
-console.log(priest);
-console.log(settler);
-console.log(person.victoryPoints);
+
+harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest]);
+
+console.log(harborDisplay);
+
+//console.log(card);
+//console.log(captain);
+//console.log(trader.color);
+//console.log(joker);
+//console.log(priest);
+//console.log(settler);
+//console.log(person.victoryPoints);
