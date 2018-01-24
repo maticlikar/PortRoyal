@@ -9,6 +9,8 @@ priest = new Priest();
 
 harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest]);
 
+harborDisplay.display();
+
 console.log(harborDisplay);
 
 //console.log(card);
