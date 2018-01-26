@@ -5,4 +5,8 @@ class Person extends Card {
     this.cost = cost;
     this.ability = ability;
   }
+
+  toString() {
+    return this.victoryPoints + ', ' + this.cost + ', ' + this.victoryPoints;
+  }
 }

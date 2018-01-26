@@ -14,16 +14,6 @@ harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest, trad
 
 harborDisplay.display();
 
-//console.log(harborDisplay);
-
-//console.log(card);
-//console.log(captain);
-//console.log(trader.color);
-//console.log(joker);
-//console.log(priest);
-//console.log(settler);
-//console.log(person.victoryPoints);
-
 function addToHarborDisplay() {
   console.log(harborDisplay);
   // TODO: Make it add a card from the deck not just a random card
