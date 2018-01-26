@@ -5,21 +5,16 @@ trader = new Trader(1, 2, 'green');
 settler = new Settler();
 joker = new Joker();
 priest = new Priest();
-priest1 = new Priest();
-priest2 = new Priest();
-priest3 = new Priest();
-priest4 = new Priest();
-priest5 = new Priest();
-priest6 = new Priest();
-priest7 = new Priest();
-priest8 = new Priest();
 
+const deck = document.querySelector(".deck-top");
 
-harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest, trader, trader, trader, trader, trader, trader, trader, trader, trader, trader, trader, trader, trader, trader]);
+deck.addEventListener("click", addToHarborDisplay);
+
+harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest, trader]);
 
 harborDisplay.display();
 
-console.log(harborDisplay);
+//console.log(harborDisplay);
 
 //console.log(card);
 //console.log(captain);
@@ -28,3 +23,10 @@ console.log(harborDisplay);
 //console.log(priest);
 //console.log(settler);
 //console.log(person.victoryPoints);
+
+function addToHarborDisplay() {
+  console.log(harborDisplay);
+  // TODO: Make it add a card from the deck not just a random card
+  harborDisplay.cards.push(new Card(true));
+  harborDisplay.display();
+}
