@@ -7,6 +7,6 @@ class Person extends Card {
   }
 
   toString() {
-    return this.victoryPoints + ', ' + this.cost + ', ' + this.victoryPoints;
+    return this.victoryPoints + ', ' + this.cost + ', ' + this.ability;
   }
 }

@@ -6,9 +6,12 @@ settler = new Settler();
 joker = new Joker();
 priest = new Priest();
 
-const deck = document.querySelector(".deck-top");
+const deck = [];
+setUpDeck();
 
-deck.addEventListener("click", addToHarborDisplay);
+const deckTop = document.querySelector(".deck-top");
+
+deckTop.addEventListener("click", addToHarborDisplay);
 
 harborDisplay = new HarborDisplay([captain, trader, settler, joker, priest, trader]);
 
@@ -19,4 +22,8 @@ function addToHarborDisplay() {
   // TODO: Make it add a card from the deck not just a random card
   harborDisplay.cards.push(new Card(true));
   harborDisplay.display();
+}
+
+function setUpDeck() {
+  
 }
