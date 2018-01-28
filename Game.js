@@ -8,6 +8,7 @@ priest = new Priest();
 
 const deck = [];
 setUpDeck();
+shuffle(deck);
 
 console.log(deck);
 
@@ -15,15 +16,31 @@ const deckTop = document.querySelector('.deck-top');
 
 deckTop.addEventListener('click', addToHarborDisplay);
 
-harborDisplay = new HarborDisplay(deck);
+harborDisplay = new HarborDisplay([]);
 
 harborDisplay.display();
 
 function addToHarborDisplay() {
   console.log(harborDisplay);
+  console.log(deck);
   // TODO: Make it add a card from the deck not just a random card
-  harborDisplay.cards.push(new Card(true));
+  if(deck.length > 0) {
+    harborDisplay.cards.push(deck[0]);
+    deck.splice(0, 1);
+  }
+
   harborDisplay.display();
+}
+
+function shuffle(a) {
+    let j, x, i;
+
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
 }
 
 function setUpDeck() {
