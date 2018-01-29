@@ -1,24 +1,19 @@
-card = new Card(true);
-person = new Person(true, 5, 6, 'ability');
-captain = new Captain();
-trader = new Trader(1, 2, 'green'); 
-settler = new Settler();
-joker = new Joker();
-priest = new Priest();
-
 const deck = [];
 setUpDeck();
 shuffle(deck);
-
-console.log(deck);
+shuffle(deck);
 
 const deckTop = document.querySelector('.deck-top');
+const harborDisplayDiv = document.querySelector('.harborDisplay');
 
 deckTop.addEventListener('click', addToHarborDisplay);
 
 harborDisplay = new HarborDisplay([]);
+personalDisplay = new PersonalDisplay([]);
 
+personalDisplay.display();
 harborDisplay.display();
+
 
 function addToHarborDisplay() {
   console.log(harborDisplay);
@@ -30,6 +25,8 @@ function addToHarborDisplay() {
   }
 
   harborDisplay.display();
+
+  setEventListenersToCards();
 }
 
 function shuffle(a) {
@@ -41,6 +38,23 @@ function shuffle(a) {
         a[i] = a[j];
         a[j] = x;
     }
+}
+
+function setEventListenersToCards() {
+  const cards = harborDisplayDiv.children;
+  
+  for(let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener('click', addToPersonalDisplay);
+  }
+}
+
+function addToPersonalDisplay() {
+  console.log(this);
+  personalDisplay.cards.push(this);
+
+  console.table(personalDisplay);
+
+  personalDisplay.display();
 }
 
 function setUpDeck() {

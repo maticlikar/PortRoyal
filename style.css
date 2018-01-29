@@ -16,6 +16,10 @@
   flex-wrap: wrap;
 }
 
+.personalDisplay {
+  border: 5px solid red;
+}
+
 .card {
   margin: 5px;
   border: 1px solid black;
