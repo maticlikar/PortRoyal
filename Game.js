@@ -18,7 +18,7 @@ harborDisplay.display();
 function addToHarborDisplay() {
   console.log(harborDisplay);
   console.log(deck);
-  // TODO: Make it add a card from the deck not just a random card
+
   if(deck.length > 0) {
     harborDisplay.cards.push(deck[0]);
     deck.splice(0, 1);
@@ -50,6 +50,9 @@ function setEventListenersToCards() {
 
 function addToPersonalDisplay() {
   console.log(this);
+  // TODO: Here I'm adding an html element instead of a card object. Could try looking into 
+  // data attributes to store the correct data and then just create a new card object
+  // with the correct arguments
   personalDisplay.cards.push(this);
 
   console.table(personalDisplay);
