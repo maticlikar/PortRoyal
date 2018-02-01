@@ -16,8 +16,6 @@ harborDisplay.display();
 
 
 function addToHarborDisplay() {
-  console.log(harborDisplay);
-  console.log(deck);
 
   if(deck.length > 0) {
     harborDisplay.cards.push(deck[0]);
@@ -49,15 +47,26 @@ function setEventListenersToCards() {
 }
 
 function addToPersonalDisplay() {
+  let parent = this.parentNode;
+  // Index of the card element in the harbor display div
+  let index = Array.prototype.indexOf.call(parent.children, this);
+
+  console.table(harborDisplay);
+  console.log(index);
+  console.log(harborDisplay.cards[index]);
   console.log(this);
+
   // TODO: Here I'm adding an html element instead of a card object. Could try looking into 
   // data attributes to store the correct data and then just create a new card object
   // with the correct arguments
-  personalDisplay.cards.push(this);
 
-  console.table(personalDisplay);
+  personalDisplay.cards.push(harborDisplay.cards[index]);
+  harborDisplay.cards.splice(index, 1);
 
+  harborDisplay.display();
   personalDisplay.display();
+
+  setEventListenersToCards();
 }
 
 function setUpDeck() {

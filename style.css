@@ -17,7 +17,14 @@
 }
 
 .personalDisplay {
-  border: 5px solid red;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  border: 5px solid green;
+  max-width: 75vh;
+  max-height: 50vh;
+  flex-wrap: wrap;
 }
 
 .card {
