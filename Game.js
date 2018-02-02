@@ -14,6 +14,7 @@ personalDisplay = new PersonalDisplay([]);
 personalDisplay.display();
 harborDisplay.display();
 
+// TODO: Remove the data atributes if they are no longer needed
 
 function addToHarborDisplay() {
 
@@ -56,16 +57,13 @@ function addToPersonalDisplay() {
   console.log(harborDisplay.cards[index]);
   console.log(this);
 
-  // TODO: Here I'm adding an html element instead of a card object. Could try looking into 
-  // data attributes to store the correct data and then just create a new card object
-  // with the correct arguments
-
   personalDisplay.cards.push(harborDisplay.cards[index]);
   harborDisplay.cards.splice(index, 1);
 
   harborDisplay.display();
   personalDisplay.display();
 
+  // Need to reset the listeners
   setEventListenersToCards();
 }
 
