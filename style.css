@@ -1,7 +1,7 @@
 
 .container {
   display: flex; 
-  align-items: center;
+  /*align-items: center;*/
   border: 5px solid blue;
   height: 100vh;
 }
@@ -13,11 +13,17 @@
   max-width: 75vh;
   padding: 10px;
   flex-wrap: wrap;
+  overflow: auto;
+}
+
+.otherCards {
+  border: 5px solid pink;
 }
 
 .displays {
   border: 5px solid black;
   display: flex;
+  height: 100vh;
   flex-direction: column;
 }
 
@@ -28,6 +34,7 @@
   border: 5px solid green;
   max-width: 75vh;
   flex-wrap: wrap;
+  overflow: auto;
 }
 
 .card {
